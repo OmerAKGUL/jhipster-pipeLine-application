@@ -1,0 +1,36 @@
+
+entity SalesEmployee {
+	salesEmployee String
+}
+
+/**
+ * The Employee entity.
+ */
+entity Pipeline {
+	/**
+	* The firstname attribute.
+	*/
+	opportunityName String
+	totalOppValue Long
+	inv Long
+    estCOST Long
+}
+ 
+  
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Pipeline to SalesEmployee{salesEmployee}
+}
+ 
+// Set pagination options
+paginate Pipeline  with infinite-scroll
+
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Pipeline 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
